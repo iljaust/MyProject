@@ -2,6 +2,7 @@ package com.company;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -80,6 +81,12 @@ public class SkillRepository {
 
     private Skill stringToSkill(String skill,Long id){
         return new Skill(id, skill);
+    }
+
+    public long generateID(){
+        List<Skill> skills = fromFileToArray();
+        Skill highestID = skills.stream().max(Comparator.comparingLong(Skill::getId)).get();
+        return highestID.getId();
     }
 
 }
