@@ -1,5 +1,6 @@
 package com.company.repository;
+import com.company.model.Skill;
 
-public interface GenSkillRepository<Skill,Long> extends GenericRepository{
+public interface GenSkillRepository extends GenericRepository<Skill,Long>{
 
 }

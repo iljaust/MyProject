@@ -9,12 +9,11 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-public class SkillRepository {
+public class SkillRepository implements GenSkillRepository{
     private final String SKILL_FILE_NAME = "skills.txt";
 
     public List<Skill> getAll(){
-        List<Skill> arr = fromFileToArray();
-        return arr;
+        return fromFileToArray();
     }
     private List<Skill> fromFileToArray() {
         File file = new File(SKILL_FILE_NAME);
